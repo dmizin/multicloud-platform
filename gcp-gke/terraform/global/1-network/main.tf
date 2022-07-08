@@ -3,23 +3,23 @@ module "network" {
     provision_vpc   = true
     project_id      = "gts-multicloud-pe-dmitry"
     network_name    = "network01"
-    environment     = "enviroment01" #For naming conventions; can be the same as project name.
+    environment     = "environment01" #For naming conventions; can be the same as project name.
     region          = ["us-west2"]
     fqdn            = "cluster01.gcp.demo.genesys.com."
 
     subnets = [
         {
-            subnet_name           = "enviroment01-us-west2-subnet"
+            subnet_name           = "environment01-us-west2-subnet"
             subnet_ip             = "10.168.0.0/22"
             subnet_region         = "us-west2"
         },
         {
-            subnet_name           = "enviroment01-us-west2-vm-subnet"
+            subnet_name           = "environment01-us-west2-vm-subnet"
             subnet_ip             = "10.168.8.0/22"
             subnet_region         = "us-west2"
         },
         {
-            subnet_name           = "enviroment01-us-west2-privateep-subnet"
+            subnet_name           = "environment01-us-west2-privateep-subnet"
             subnet_ip             = "10.168.4.0/22"
             subnet_region         = "us-west2"
         }
