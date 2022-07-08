@@ -1,20 +1,20 @@
 module "remote_state" {
   source      = "../../../tfm/0-remotestate/" #github.com/genesys/multicloud-platform.git//gcp-gke/tfm/0-remotestate?ref=master
-  name        = "tf-statefiles"
-  location    = "us-west1" 
+  name        = "gts-multicloud-pe-dmitry-tf-statefiles"
+  location    = "us-west2" 
 }
 
 #Comment out the below block
 terraform {
   backend "gcs" {
-    bucket = "tf-statefiles" #Replace with the name of the bucket created above
+    bucket = "gts-multicloud-pe-dmitry-tf-statefiles" #Replace with the name of the bucket created above
     prefix = "base-state" #creates a new folder
   }
 }
 #Commenting ends
 
 provider "google" {
-  project = "project01"
+  project = "gts-multicloud-pe-dmitry"
 }
 
 terraform {
